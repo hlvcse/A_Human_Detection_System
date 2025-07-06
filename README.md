@@ -1,5 +1,5 @@
-🚶 Human Detection System 🚶‍♀️
-An OpenCV and Scikit-learn Powered Solution for Identifying Humans in Images
+🚶 Human Detection System 
+🚶‍♀️An OpenCV and Scikit-learn Powered Solution for Identifying Humans in Images
 
 
 

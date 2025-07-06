@@ -33,11 +33,11 @@ To get this project up and running on your local machine, follow these simple st
 ### 1\. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/A-Human-Detection-System-Using-Machine-Learning.git
+git clone https://github.com/hlvcse/A-Human-Detection-System-Using-Machine-Learning.git
 cd A-Human-Detection-System-Using-Machine-Learning
 ```
 
-*(Replace `your-username` with your actual GitHub username and the repository name if it differs)*
+
 
 ### 2\. Install Dependencies
 
@@ -59,8 +59,8 @@ You might see messages about "Requirement already satisfied" for some packages; 
 │   └── predictTestImages/  # Directory for new images to test detection
 ├── model/
 │   └── svm_model.pkl       # Trained SVM model will be saved here
-├── human_detection.ipynb   # Jupyter Notebook containing the full code and explanations
-└── README.md               # This file
+├── jupyter notebooks       # Jupyter Notebook for human detection containing the full code and explanations
+└── README.md               # This file.
 ```
 
 *(Note: Adjust `human_detection.ipynb` if your main script is a `.py` file or if the notebook name is different)*

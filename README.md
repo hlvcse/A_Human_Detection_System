@@ -1,7 +1,5 @@
-📄 Final README.md (Clean, Publish-Ready)
-markdown
-Copy
-Edit
+📄 README.md 
+
 # 🧠 Human Detection Using HOG + SVM, ANN, and CNN
 
 This project presents a complete human detection system using three different models:  

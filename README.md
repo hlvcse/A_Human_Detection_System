@@ -1,141 +1,130 @@
-🚶 Human Detection System 🚶‍♀️
-An OpenCV and Scikit-learn Powered Solution for Identifying Humans in Images
+📄 README.md
+# 🧠 Human Detection Using HOG + SVM, ANN, and CNN
 
+This project presents a complete human detection system using three different models:  
+- **SVM** with HOG features  
+- **ANN (MLP)** using flattened grayscale  
+- **CNN** using deep convolutional layers
 
+The goal is to detect whether a given image contains a human, and to **compare classical ML and deep learning** approaches for this task.
 
- ## ✨ Overview
+---
 
-Welcome to the Human Detection System! This project leverages the power of computer vision and machine learning to accurately identify human figures within static images. Built with OpenCV for image processing and scikit-learn for classification, this system employs the Histogram of Oriented Gradients (HOG) features combined with a Linear Support Vector Machine (SVM) to achieve robust human presence detection.
+## 📁 Project Structure
 
-Whether you're building surveillance applications, robotics systems, or simply exploring the fascinating world of object detection, this repository provides a clear, concise, and effective starting point.
-
-🚀 Features
-HOG Feature Extraction: Utilizes the highly effective Histogram of Oriented Gradients (HOG) descriptor for robust feature representation of human shapes.
-
-Linear SVM Classifier: Employs a Linear Support Vector Machine for efficient and accurate classification based on extracted HOG features.
-
-Modular Codebase: Clean and well-structured code for easy understanding and extension.
-
-Model Persistence: Ability to save and load the trained SVM model for future use without retraining.
-
-Comprehensive Evaluation: Includes classification report and confusion matrix to assess model performance.
-
-Flexible Testing: Supports testing on single or multiple new images to visualize detection capabilities.
-
-🛠️ Installation
-To get this project up and running on your local machine, follow these simple steps.
-
-Prerequisites
-Python 3.x
-
-1. Clone the Repository
-Bash
-
-git clone https://github.com/your-username/A-Human-Detection-System-Using-Machine-Learning.git
-cd A-Human-Detection-System-Using-Machine-Learning
-(Replace your-username with your actual GitHub username and the repository name if it differs)
-
-2. Install Dependencies
-All required libraries can be installed using pip:
-
-Bash
-
-pip install numpy matplotlib scikit-learn opencv-python joblib
-You might see messages about "Requirement already satisfied" for some packages; this is normal if you have them installed. The crucial packages like opencv-python will be downloaded and installed.
-
-📁 Project Structure
-.
 ├── data/
-│   ├── pos_person/         # Directory containing positive samples (human images)
-│   ├── neg_person/         # Directory containing negative samples (non-human images)
-│   └── predictTestImages/  # Directory for new images to test detection
+│ ├── pos_person/ # Human images
+│ ├── neg_person/ # Non-human images
+│ └── predictTestImages/ # Test images for predictions
 ├── model/
-│   └── svm_model.pkl       # Trained SVM model will be saved here
-├── notebooks   # Jupyter Notebook containing the full code and explanations
-└── README.md               # This file
+│ ├── svm_model.pkl
+│ ├── human_detector_ann.h5
+│ └── human_detector_cnn.h5
+├── notebooks/
+│ ├── 1_train_svm.ipynb # Train SVM with HOG features
+│ ├── 2_train_ann.ipynb # Train ANN (MLP)
+│ ├── 3_train_cnn.ipynb # Train CNN
+│ └── 4_model_comparison.ipynb # Compare all models on test set ✅
+├── README.md
 
-💡 Usage
-The core logic of the human detection system is demonstrated within the Jupyter Notebook.
+yaml
+Copy
+Edit
 
-1. Prepare Your Dataset
-Ensure you have a collection of positive (human) and negative (non-human) images.
+---
 
-Place your human images in the data/pos_person directory.
+## ✅ Models Overview
 
-Place your non-human images in the data/neg_person directory.
+### 🔹 1. SVM + HOG
+- Classic computer vision technique
+- Uses OpenCV's HOG descriptor for feature extraction
+- SVM classifier trained on HOG features
 
-The code is configured to look for these paths:
+### 🔹 2. ANN (MLP)
+- Input: Flattened grayscale image (128x64 → 8192 features)
+- Built using Keras Sequential API with dense layers and dropout
+- Fast and lightweight, but lower accuracy than CNN
 
-Python
+### 🔹 3. CNN
+- Input: 128×64 grayscale images with shape (128, 64, 1)
+- Convolutional layers + MaxPooling + Dense layers
+- Most accurate and generalizable model
 
-pos_path = "../data/pos_person"
-neg_path = "../data/neg_person"
-2. Run the Jupyter Notebook
-Open the human_detection.ipynb file in a Jupyter environment (e.g., Jupyter Lab or Jupyter Notebook):
+---
 
-Bash
+## 📊 Model Evaluation (on same test set)
 
-jupyter notebook
-Execute the cells sequentially. The notebook will guide you through:
+| Model | Accuracy | Precision | Recall | F1 Score |
+|-------|----------|-----------|--------|----------|
+| **SVM** | 95.51% | 95.11% | 92.55% | 93.81% |
+| **ANN** | 83.40% | 77.78% | 76.81% | 77.29% |
+| **CNN** | 98.32% | 98.73% | 96.69% | 97.70% |
 
-Importing Libraries: Essential tools for data manipulation, image processing, and machine learning.
+All evaluations were performed using a common `X_test` and `y_test` split to ensure fair comparison.
 
-Viewing Sample Images: A quick visualization of the dataset's content.
+---
 
-Preparing Dataset (HOG Features): Extraction of HOG features from images and labeling them.
+## 📈 Visual Analysis
 
-Train/Test Split: Dividing the dataset for model training and evaluation.
+The comparison notebook includes:
+- Classification reports
+- Confusion matrices (SVM, ANN, CNN)
+- ROC curve plot
+- Visual predictions from all three models
+- Summary table with performance metrics
 
-Training SVM Classifier: Training the Linear SVM model on the HOG features.
+📍 Notebook: `notebooks/4_model_comparison.ipynb`
 
-Evaluating the Model: Displaying classification report and confusion matrix to assess performance.
+---
 
-Saving and Loading the Model: Demonstrating how to persist the trained model.
+## 🧪 Getting Started
 
-Testing Detection: Applying the trained model on new, unseen images to predict the presence of humans.
+### 1. Clone the repository
+```bash
+git clone https://github.com/yourusername/human-detection-hog-mlp-cnn.git
+cd human-detection-hog-mlp-cnn
+2. Install dependencies
+bash
+Copy
+Edit
+pip install -r requirements.txt
+3. Prepare the dataset
+Place your images in the following folders:
 
-3. Test on Your Own Images
-To test the system on new images:
+bash
+Copy
+Edit
+data/
+├── pos_person/         # Human images
+├── neg_person/         # Non-human images
+4. Run Notebooks
+Train each model using:
 
-Place your desired test images in the data/predictTestImages folder.
+1_train_svm.ipynb
 
-Run the final sections of the Jupyter Notebook to see the real-time predictions.
+2_train_ann.ipynb
 
-📊 Model Performance
-The trained Linear SVM model demonstrates strong performance in distinguishing between human and non-human subjects based on HOG features.
+3_train_cnn.ipynb
 
-Classification Report:
+Compare models using:
 
-              precision    recall  f1-score   support
+4_model_comparison.ipynb
 
-           0       0.96      0.97      0.97       830  (Not Human)
-           1       0.95      0.93      0.94       483  (Human)
+📚 Tech Stack
+Python 3.10+
 
-    accuracy                           0.96      1313
-   macro avg       0.96      0.95      0.95      1313
-weighted avg       0.96      0.96      0.96      1313
-Confusion Matrix:
+OpenCV
 
-[[807  23]  (True Negative: 807, False Positive: 23)
- [ 33 450]] (False Negative: 33, True Positive: 450)
-These metrics indicate high accuracy, precision, and recall, showcasing the model's effectiveness in identifying human figures with minimal false positives and false negatives.
+scikit-learn
 
-📈 Future Enhancements
-Real-time Video Processing: Extend the system to process live video streams for dynamic human detection.
+TensorFlow / Keras
 
-Deep Learning Integration: Explore more advanced models like Convolutional Neural Networks (CNNs) for potentially higher accuracy and robustness in complex scenarios.
+Matplotlib, Seaborn, Pandas
 
-Object Tracking: Implement tracking algorithms to follow detected humans across sequential frames.
+Jupyter Notebook
 
-More Diverse Dataset: Expand the training dataset with more varied poses, lighting conditions, backgrounds, and occlusions to enhance model generalization.
+✍️ Author
+👤 Hanumat Lal Vishwakarma
+📎 LinkedIn
+📎 GitHub
 
-Optimization: Investigate performance optimizations, including potential GPU acceleration for faster inference.
-
-🤝 Contributing
-Contributions are welcome! If you have ideas for improvements, bug fixes, or new features, please feel free to open an issue or submit a pull request.
-
-📄 License
-This project is licensed under the MIT License - see the LICENSE file for details.
-(Remember to create a LICENSE file if you plan to share your project publicly.)
-
-Made with ❤️ by Hanumat Lal Vishwakarma

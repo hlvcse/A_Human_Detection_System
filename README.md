@@ -12,7 +12,7 @@ The goal is to detect whether a given image contains a human, and to **compare c
 ---
 
 ## 📁 Project Structure
-
+```bash
 ├── data/
 │ ├── pos_person/ # Human images
 │ ├── neg_person/ # Non-human images
@@ -27,7 +27,7 @@ The goal is to detect whether a given image contains a human, and to **compare c
 │ ├── 3_train_cnn.ipynb # Train CNN
 │ └── model_comparison.ipynb # Compare all models on test set ✅
 ├── README.md
-
+```
 
 ---
 
@@ -78,20 +78,28 @@ The comparison notebook includes:
 ## 🧪 Getting Started
 
 ### 1. Clone the repository
+```bash
 git clone https://github.com/yourusername/human-detection-hog-mlp-cnn.git
 cd human-detection-hog-mlp-cnn
+```
 
 ### 2. Install dependencies
+```bash
 pip install -r requirements.txt
+```
 
 ### 3. Prepare the dataset
+```bash
 Place your images in the following folders:
 data/
 ├── pos_person/         # Human images
 ├── neg_person/         # Non-human images
+```
 
 ### 4. Run Notebooks
+```bash
 Train each model using these notebooks: 1_train_svm.ipynb,   2_train_ann.ipynb,   3_train_cnn.ipynb
+```
 
 Compare models using these notebooks: model_comparison.ipynb
 

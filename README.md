@@ -71,7 +71,7 @@ The comparison notebook includes:
 - Visual predictions from all three models
 - Summary table with performance metrics
 
-📍 Notebook: `notebooks/4_model_comparison.ipynb`
+📍 Notebook: `notebooks/model_comparison.ipynb`
 
 ---
 

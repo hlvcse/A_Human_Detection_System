@@ -78,7 +78,6 @@ The comparison notebook includes:
 ## 🧪 Getting Started
 
 ### 1. Clone the repository
-```bash
 git clone https://github.com/yourusername/human-detection-hog-mlp-cnn.git
 cd human-detection-hog-mlp-cnn
 

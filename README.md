@@ -99,12 +99,13 @@ data/
 ### 4. Run Notebooks
 ```bash
 Train each model using these notebooks: 1_train_svm.ipynb,   2_train_ann.ipynb,   3_train_cnn.ipynb
+Compare models using these notebooks: model_comparison.ipynb
 ```
 
-Compare models using these notebooks: model_comparison.ipynb
-
 📚 Tech Stack
+```bash
 Python 3.10+, OpenCV, scikit-learn, TensorFlow / Keras, Matplotlib, Seaborn, Pandas, Jupyter Notebook
+```
 
 ✍️ Author
 👤 Hanumat Lal Vishwakarma

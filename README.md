@@ -28,9 +28,6 @@ The goal is to detect whether a given image contains a human, and to **compare c
 │ └── 4_model_comparison.ipynb # Compare all models on test set ✅
 ├── README.md
 
-yaml
-Copy
-Edit
 
 ---
 

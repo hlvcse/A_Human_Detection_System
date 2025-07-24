@@ -81,17 +81,11 @@ The comparison notebook includes:
 ```bash
 git clone https://github.com/yourusername/human-detection-hog-mlp-cnn.git
 cd human-detection-hog-mlp-cnn
-2. Install dependencies
-bash
-Copy
-Edit
+### 2. Install dependencies
+```bash
 pip install -r requirements.txt
-3. Prepare the dataset
+###  3. Prepare the dataset
 Place your images in the following folders:
-
-bash
-Copy
-Edit
 data/
 ├── pos_person/         # Human images
 ├── neg_person/         # Non-human images

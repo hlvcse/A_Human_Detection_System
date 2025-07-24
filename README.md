@@ -81,39 +81,23 @@ The comparison notebook includes:
 ```bash
 git clone https://github.com/yourusername/human-detection-hog-mlp-cnn.git
 cd human-detection-hog-mlp-cnn
+
 ### 2. Install dependencies
-```bash
 pip install -r requirements.txt
-###  3. Prepare the dataset
+
+### 3. Prepare the dataset
 Place your images in the following folders:
 data/
 ├── pos_person/         # Human images
 ├── neg_person/         # Non-human images
-4. Run Notebooks
-Train each model using:
 
-1_train_svm.ipynb
+### 4. Run Notebooks
+Train each model using these notebooks: 1_train_svm.ipynb,   2_train_ann.ipynb,   3_train_cnn.ipynb
 
-2_train_ann.ipynb
-
-3_train_cnn.ipynb
-
-Compare models using:
-
-model_comparison.ipynb
+Compare models using these notebooks: model_comparison.ipynb
 
 📚 Tech Stack
-Python 3.10+
-
-OpenCV
-
-scikit-learn
-
-TensorFlow / Keras
-
-Matplotlib, Seaborn, Pandas
-
-Jupyter Notebook
+Python 3.10+, OpenCV, scikit-learn, TensorFlow / Keras, Matplotlib, Seaborn, Pandas, Jupyter Notebook
 
 ✍️ Author
 👤 Hanumat Lal Vishwakarma

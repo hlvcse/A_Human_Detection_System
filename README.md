@@ -25,7 +25,7 @@ The goal is to detect whether a given image contains a human, and to **compare c
 │ ├── 1_train_svm.ipynb # Train SVM with HOG features
 │ ├── 2_train_ann.ipynb # Train ANN (MLP)
 │ ├── 3_train_cnn.ipynb # Train CNN
-│ └── 4_model_comparison.ipynb # Compare all models on test set ✅
+│ └── model_comparison.ipynb # Compare all models on test set ✅
 ├── README.md
 
 
@@ -106,7 +106,7 @@ Train each model using:
 
 Compare models using:
 
-4_model_comparison.ipynb
+model_comparison.ipynb
 
 📚 Tech Stack
 Python 3.10+
